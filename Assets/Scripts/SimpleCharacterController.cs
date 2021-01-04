@@ -10,12 +10,12 @@ namespace Jorik
     {
         [SerializeField] private float _Speed = 10.0f;
         [SerializeField] private float _RotationSpeed = 2.0f;
-        private Rigidbody _Cont = null;
+        private Rigidbody _Body = null;
         private Camera _MainCamera = null;
 
         private void Awake()
         {
-            _Cont = GetComponent<Rigidbody>();
+            _Body = GetComponent<Rigidbody>();
             _MainCamera = Camera.main;
         }
 
@@ -26,12 +26,7 @@ namespace Jorik
 
             Vector3 newPos =  transform.position + xValue + yValue;
 
-            _Cont.MovePosition(newPos);
-
-            
-
-
-
+            _Body.MovePosition(newPos);
         }
 	}
 }
